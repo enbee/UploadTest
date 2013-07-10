@@ -10,11 +10,17 @@
 
         // Wait for PhoneGap to load
         //
-        document.addEventListener("deviceready", onDeviceReady, false);
+       document.addEventListener("deviceready", onDeviceReady, false);
+
+		function onDeviceReady() {
+		    // Now safe to use device APIs
+		    alert('Device Be Ready');
+		}
         
         // PhoneGap is ready
         //
-        function onDeviceReady() {
+        /*
+function onDeviceReady() {
 
             // Retrieve image file location from specified source
 			alert('Device Be Ready');
@@ -54,6 +60,7 @@
             console.log("upload error source " + error.source);
             console.log("upload error target " + error.target);
         }
+*/
 
         </script>
 </head>
