@@ -5,32 +5,29 @@
 	
     <title>File Transfer Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <!-- <script type="text/javascript" charset="utf-8" src="cordova.js"></script> -->
     <script type="text/javascript" charset="utf-8">
 
         // Wait for PhoneGap to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
-
+        
         // PhoneGap is ready
         //
         function onDeviceReady() {
 
             // Retrieve image file location from specified source
-            console.log('Hello World');
-            /*
-navigator.camera.getPicture(uploadPhoto,
+           // alert('Hello World');
+            navigator.camera.getPicture(uploadPhoto,
                                         function(message) { alert('get picture failed'); },
                                         { quality: 50, 
                                         destinationType: navigator.camera.DestinationType.FILE_URI,
                                         sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
                                         );
-*/
 
         }
 
-        /*
-function uploadPhoto(imageURI) {
+        function uploadPhoto(imageURI) {
             var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -57,7 +54,6 @@ function uploadPhoto(imageURI) {
             console.log("upload error source " + error.source);
             console.log("upload error target " + error.target);
         }
-*/
 
         </script>
 </head>
