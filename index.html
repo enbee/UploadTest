@@ -14,7 +14,7 @@
 
 		function onDeviceReady() {
 		    // Now safe to use device APIs
-		    alert('Device Be Ready');
+		    //alert('Device Be Ready');
 		    // PhoneGap is ready
 
         
@@ -42,7 +42,9 @@
             params.value2 = "param";
 
             options.params = params;
-
+			
+			alert(JSON.stringify(options));
+			
             var ft = new FileTransfer();
             ft.upload(imageURI, "http://asgt.mocwebservices.co.uk/upload.php", win, fail, options);
         }
