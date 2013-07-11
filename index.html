@@ -34,12 +34,13 @@
         function uploadPhoto(imageURI) {
             var options = new FileUploadOptions();
             options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1)+".jpg";
             options.mimeType="image/jpeg";
 
             var params = new Object();
-            params.value1 = "test";
-            params.value1 = "Param";
+            params.user = "user_id";
+            params.report = "report_id";
+            params.db = "database_name";
             //params.value2 = filename.substr(filename.lastIndexOf(".")+1);;
             //params.extension = filename.substr(filename.lastIndexOf(".")+1);
 
