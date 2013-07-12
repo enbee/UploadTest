@@ -4,14 +4,18 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 	
     <title>File Transfer Example</title>
-
+	
+	<script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
     <script type="text/javascript" charset="utf-8">
 		
-        // Wait for PhoneGap to load
-        //
+        
+        //JQUERY READY
+      $().ready(function() {  
+      // Wait for PhoneGap to load
        document.addEventListener("deviceready", onDeviceReady, false);
-
+	   
 		function onDeviceReady() {
 		    // Now safe to use device APIs
 		    //alert('Device Be Ready');
@@ -22,12 +26,22 @@
 
             // Retrieve image file location from specified source
 			
-            navigator.camera.getPicture(uploadPhoto,
+			// ON BTN CLICK
+			$('#upload_btn').click(function() {
+				
+				
+				navigator.camera.getPicture(uploadPhoto,
                                         function(message) { alert('get picture failed'); },
                                         { quality: 50, 
                                         destinationType: navigator.camera.DestinationType.FILE_URI,
                                         sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
                                         );
+        
+        
+        
+    });
+			
+            
 
         }
 
@@ -38,9 +52,10 @@
             options.mimeType="image/jpeg";
 
             var params = new Object();
-            params.user = "user_id";
-            params.report = "report_id";
-            params.db = "database_name";
+            params.user = "android";
+            params.userID = "21";
+            params.report = "37";
+            params.db = "angelsec";
             //params.value2 = filename.substr(filename.lastIndexOf(".")+1);;
             //params.extension = filename.substr(filename.lastIndexOf(".")+1);
 
@@ -53,10 +68,12 @@
         }
 
         function win(r) {
-            console.log("Code = " + r.responseCode);
-            console.log("Response = " + r.response);
-            console.log("Sent = " + r.bytesSent);
-            alert(JSON.stringify(r));
+            //console.log("Code = " + r.responseCode);
+            //console.log("Response = " + r.response);
+           // console.log("Sent = " + r.bytesSent);
+            //alert(JSON.stringify(r));
+            alert('Image Upload Success');
+            
         }
 
         function fail(error) {
@@ -64,11 +81,13 @@
             console.log("upload error source " + error.source);
             console.log("upload error target " + error.target);
         }
-
+});
         </script>
 </head>
 <body>
     <h1>Example</h1>
-    <p>Upload File</p>
+    <p id="upload_btn">Upload File</p>
+    
+    <p id="response"></p>
 </body>
 </html>
