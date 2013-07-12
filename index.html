@@ -76,17 +76,20 @@
             var str = r.response;
             
             if (str.substr(0, 5) == 'ERROR') {
-                  $('#response p').html(str);     
+                  //$('#response p').html(str); 
+                  alert('fail');  
              }else{
-	             
+	             alert('success');
 	             // Complete
-                        $('<img>').attr({
+                        /*
+$('<img>').attr({
                             'src': 'http://asgt.mocwebservices.co.uk/'+r.response
                         }).css({
                         'margin': '10px auto',
                         'width': '90%',
                         'height': 'auto'
                     }).appendTo($('#response p'));
+*/
              }
             
         }
