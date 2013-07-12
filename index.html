@@ -72,22 +72,22 @@
             //console.log("Response = " + r.response);
            // console.log("Sent = " + r.bytesSent);
             //alert(JSON.stringify(r));
-            alert('Image Upload Success \n'+r.file);
+            // alert('Image Upload Success \n'+r.file);
+            var str = r.response;
             
-            /*
-if (r.file) {
-                        // Complete
-                        $('#image-response p span').html('done');
-                        $('#image-response b').html(response.filename);
+            if (str.substr(0, 5) == 'ERROR') {
+                  $('#response p').html(str);     
+             }else{
+	             
+	             // Complete
                         $('<img>').attr({
-                            'src': response.filename
+                            'src': 'http://asgt.mocwebservices.co.uk/'+r.response
                         }).css({
                         'margin': '10px auto',
                         'width': '90%',
                         'height': 'auto'
-                    }).appendTo($('#image-response #image-uploaded'));
+                    }).appendTo($('#response p'));
              }
-*/
             
         }
 
