@@ -79,10 +79,11 @@
                   $('#response').append(str); 
                   // alert('fail');  
              }else{
-	             $('#response').append('Success'); 
+             	var imgURL = 'http://asgt.mocwebservices.co.uk/'+str;
+	             $('#response').append('Success: '+imgURL); 
 	             // Complete
                         $('<img>').attr({
-                            'src': 'http://asgt.mocwebservices.co.uk/'+str
+                            'src': imgURL
                         }).css({
                         'margin': '10px auto',
                         'width': '90%',
