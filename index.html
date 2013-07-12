@@ -79,17 +79,15 @@
                   $('#response').append(str); 
                   // alert('fail');  
              }else{
-	             $('#response').append(str); 
+	             $('#response').append('Success'); 
 	             // Complete
-                        /*
-$('<img>').attr({
-                            'src': 'http://asgt.mocwebservices.co.uk/'+r.response
+                        $('<img>').attr({
+                            'src': 'http://asgt.mocwebservices.co.uk/'+str
                         }).css({
                         'margin': '10px auto',
                         'width': '90%',
                         'height': 'auto'
-                    }).appendTo($('#response p'));
-*/
+                    }).appendTo($('#response'));
              }
             
         }
