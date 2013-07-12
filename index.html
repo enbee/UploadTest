@@ -72,7 +72,22 @@
             //console.log("Response = " + r.response);
            // console.log("Sent = " + r.bytesSent);
             //alert(JSON.stringify(r));
-            alert('Image Upload Success \n'+JSON.stringify(r));
+            alert('Image Upload Success \n'+r.file);
+            
+            /*
+if (r.file) {
+                        // Complete
+                        $('#image-response p span').html('done');
+                        $('#image-response b').html(response.filename);
+                        $('<img>').attr({
+                            'src': response.filename
+                        }).css({
+                        'margin': '10px auto',
+                        'width': '90%',
+                        'height': 'auto'
+                    }).appendTo($('#image-response #image-uploaded'));
+             }
+*/
             
         }
 
