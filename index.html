@@ -76,10 +76,10 @@
             var str = r.response;
             
             if (str.substr(0, 5) == 'ERROR') {
-                  //$('#response p').html(str); 
-                  alert('fail');  
+                  $('p #response').html(str); 
+                  // alert('fail');  
              }else{
-	             alert('success');
+	             $('p #response').html(str); 
 	             // Complete
                         /*
 $('<img>').attr({
