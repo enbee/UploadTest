@@ -74,7 +74,7 @@
             //alert(JSON.stringify(r));
             // alert('Image Upload Success \n'+r.file);
             var str = r.response;
-            
+            delete ft;
             if (str.substr(0, 5) == 'ERROR') {
                   $('#response').append(str); 
                   // alert('fail');  
@@ -106,6 +106,5 @@
     <p id="upload_btn">Upload File</p>
     
     <p id="response"></p>
-    <img src="http://asgt.mocwebservices.co.uk/ANGELSEC/img/21/37/37_1373649622_21.jpg">
 </body>
 </html>
