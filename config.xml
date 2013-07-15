@@ -16,5 +16,16 @@
     <author href="http://www.enbee-design.co.uk" email="nick@enbee-design.co.uk">
         Nick Burchall 
     </author>
+    
+    <!-- PREFERENCES -->
+    
+    <preference name="orientation"                value="portrait" />  
+    
+    
+    
+    <!-- ACCESS PERMISSIONS -->
+    
+    <access origin="http://127.0.0.1*"/>
+    <access origin="http://mocwebservices.co.uk" />
 
 </widget>
