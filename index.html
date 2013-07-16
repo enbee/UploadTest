@@ -92,10 +92,7 @@
 				}
 			};  
 			
-			ft.upload(imageURI, "http://asgt.mocwebservices.co.uk/upload.php", win, fail, options); 
-			var foo = ft;
-			delete ft;
-            
+			ft.upload(imageURI, "http://asgt.mocwebservices.co.uk/upload.php", win, fail, options);            
         }
 
         function win(r) {
@@ -120,7 +117,8 @@
            // delete ft;
             if (str.substr(0, 5) == 'ERROR') {
                   $('#response').append(str); 
-                  // alert('fail');  
+                  // alert('fail');
+                  ft.abort();  
              }else{
              	var imgURL = 'http://asgt.mocwebservices.co.uk/'+str;
 	             $('#response').append('Success: '+imgURL); 
@@ -132,6 +130,7 @@
                         'width': '90%',
                         'height': 'auto'
                     }).appendTo($('#response'));
+                 ft.abort();
              }
             
         }
