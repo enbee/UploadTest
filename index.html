@@ -135,7 +135,9 @@
         }
 
         function fail(error) {
-        	$('#response').append('Error: '+error.code); 
+        	$('#response').append('Error Code: '+error.code+'</br>');
+        	$('#response').append('Error Source: '+error.source+'</br>'); 
+        	$('#response').append('Error Target: '+error.target+'</br>'); 
             /*
 alert("An error has occurred: Code = " = error.code);
             console.log("upload error source " + error.source);
