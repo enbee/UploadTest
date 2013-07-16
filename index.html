@@ -4,6 +4,12 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 	
     <title>File Transfer Example</title>
+    
+    <style type="text/css">
+    
+    #progress span { display: block; padding: 2px 0; width: 0; background: #193; text-align: center; }
+    
+    </style>
 	
 	<script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -72,7 +78,10 @@
 				if (progressEvent.lengthComputable) {
 					var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
 					//statusDom.innerHTML = perc + "% loaded...";
-					$('#response').append(perc + "% loaded...");
+					//$('#response').append(perc + "% loaded...");
+					$('#progress span').css({
+                        'width': loaded + "%"
+                    }).html(loaded + "%");
 				} else {
 					if(statusDom.innerHTML == "") {
 						statusDom.innerHTML = "Loading";
