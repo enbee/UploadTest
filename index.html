@@ -66,7 +66,7 @@
 			//alert(JSON.stringify(imageURI));
 			
             var ft = new FileTransfer();
-            ft.upload(imageURI, "http://asgt.mocwebservices.co.uk/upload.php", win, fail, options);
+            
             
               ft.onprogress = function(progressEvent) {
 				if (progressEvent.lengthComputable) {
@@ -80,7 +80,9 @@
 						statusDom.innerHTML += ".";
 					}
 				}
-			};   
+			};  
+			
+			ft.upload(imageURI, "http://asgt.mocwebservices.co.uk/upload.php", win, fail, options); 
             
         }
 
