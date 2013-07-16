@@ -76,12 +76,12 @@
             
               ft.onprogress = function(progressEvent) {
 				if (progressEvent.lengthComputable) {
-					var loaded = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+					var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
 					//statusDom.innerHTML = perc + "% loaded...";
 					//$('#response').append(perc + "% loaded...");
 					$('#progress span').css({
-                        'width': loaded + "%"
-                    }).html(loaded + "%");
+                        'width': perc + "%"
+                    }).html(perc + "%");
 				} else {
 					if(statusDom.innerHTML == "") {
 						statusDom.innerHTML = "Loading";
@@ -144,7 +144,7 @@
 <body>
     <h1>Example</h1>
     <p id="upload_btn">Upload File</p>
-    <p id="progress"></p>
+    <p id="progress"><span></span></p>
     <p id="response"></p>
 </body>
 </html>
