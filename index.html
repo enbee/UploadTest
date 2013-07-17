@@ -92,7 +92,7 @@
 				}
 			};  
 			
-			ft.upload(imageURI, "http://asgt.mocwebservices.co.uk/upload.php", win, fail, options, true);            
+			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/upload.php"), win, fail, options, true);            
         }
 
         function win(r) {
