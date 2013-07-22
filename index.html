@@ -41,12 +41,7 @@
                                         { quality: 50, 
                                         destinationType: navigator.camera.DestinationType.FILE_URI,
                                         sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
-                                        );
-        
-        
-				
-        
-        
+                                        );	        
     });
 			
             
@@ -118,10 +113,14 @@
             if (str.substr(0, 5) == 'ERROR') {
                   $('#response').append(str); 
                   // alert('fail');
-                  ft.abort();  
+                  //ft.abort();  
              }else{
              	var imgURL = 'http://asgt.mocwebservices.co.uk/'+str;
-	             $('#response').append('Success: '+imgURL); 
+             	$('#upload_btn').toggle('slow', function() {
+				    // Animation complete.
+				    $('#success').toggle('slow');
+				  });
+	             $('#response').append('Success: '+imgURL);
 	             // Complete
                         $('<img>').attr({
                             'src': imgURL
@@ -130,7 +129,7 @@
                         'width': '90%',
                         'height': 'auto'
                     }).appendTo($('#response'));
-                 ft.abort();
+                 //ft.abort();
              }
             
         }
@@ -151,6 +150,7 @@ alert("An error has occurred: Code = " = error.code);
 <body>
     <h1>Example</h1>
     <p id="upload_btn">Upload File</p>
+    <p id="success">Success! Click Here to Upload Another</p>
     <p id="progress"><span></span></p>
     <p id="response"></p>
 </body>
