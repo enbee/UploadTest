@@ -117,10 +117,12 @@
                   //ft.abort();  
              }else{
              	var imgURL = 'http://asgt.mocwebservices.co.uk/'+str;
-             	$('#upload_btn').toggle('slow', function() {
+             	/*
+$('#upload_btn').toggle('slow', function() {
 				    // Animation complete.
 				    $('#success').toggle('slow');
 				  });
+*/
 	             $('#response').append('Success: '+imgURL);
 	             // Complete
                         $('<img>').attr({
@@ -131,9 +133,11 @@
                         'height': 'auto'
                     }).appendTo($('#response'));
                  //ft.abort();
-                 $('#success').click(function() {
+                 /*
+$('#success').click(function() {
 					    location.reload();
 					});
+*/
                  
              }
             
