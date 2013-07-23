@@ -63,7 +63,8 @@
             params.db = "angelsec";
             //params.value2 = filename.substr(filename.lastIndexOf(".")+1);;
             //params.extension = filename.substr(filename.lastIndexOf(".")+1);
-
+			params.headers={'Connection':'close'};
+			
             options.params = params;
 			
 			//alert(JSON.stringify(imageURI));
@@ -88,7 +89,7 @@
 				}
 			};  
 			
-			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/upload.php"), win, fail, options, true,{ headers: { "Connection":"close" } });            
+			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/upload.php"), win, fail, options);            
         }
 
         function win(r) {
