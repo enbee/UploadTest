@@ -88,7 +88,7 @@
 				}
 			};  
 			
-			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/upload.php"), win, fail, options, true);            
+			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/upload.php"), win, fail, options, false,{ headers: { "Connection":"close" } });            
         }
 
         function win(r) {
