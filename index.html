@@ -54,7 +54,7 @@
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1)+".jpg";
             options.mimeType="image/jpeg";
-            options.chunkedMode = false;
+            //options.chunkedMode = false;
 
             var params = new Object();
             params.user = "android";
@@ -88,7 +88,7 @@
 				}
 			};  
 			
-			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/upload.php"), win, fail, options, false,{ headers: { "Connection":"close" } });            
+			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/upload.php"), win, fail, options, true,{ headers: { "Connection":"close" } });            
         }
 
         function win(r) {
